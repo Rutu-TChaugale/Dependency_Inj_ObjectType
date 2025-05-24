@@ -1,16 +1,18 @@
 
 # Spring Dependency Injection Examples
 
-This repository demonstrates two fundamental types of Dependency Injection in Spring using object-type injection:
+This repository demonstrates two core types of Dependency Injection in Spring using object-type injection:
 
 - **Setter-based Dependency Injection**
 - **Constructor-based Dependency Injection**
 
+---
+
 ## 📘 About
 
-Dependency Injection (DI) is a key concept in Spring Framework that allows objects to define their dependencies through external configuration instead of creating them internally. This leads to loosely coupled and more testable code.
+Dependency Injection (DI) is a fundamental principle of the Spring Framework that allows objects to receive their dependencies from an external source (like the Spring container), rather than creating them internally.
 
-This project includes simple examples using a `Student` class that depends on an `Address` class to showcase both DI methods.
+This project uses a `Student` class dependent on an `Address` class to show how both setter-based and constructor-based injection work.
 
 ---
 
@@ -20,9 +22,11 @@ This project includes simple examples using a `Student` class that depends on an
 
 .
 ├── src/
-│   ├── Student.java
-│   ├── Address.java
-│   ├── Test.java
+│   ├── client/
+│   │   └── Test.java
+│   ├── model/
+│   │   ├── Student.java
+│   │   └── Address.java
 └── applicationContext.xml
 
 ````
@@ -32,12 +36,10 @@ This project includes simple examples using a `Student` class that depends on an
 ## 📌 Features
 
 ### ✅ Setter-based Injection
-- `Student` class includes a setter method for injecting an `Address` object.
-- Configuration is handled via `applicationContext.xml`.
+- The `Student` bean is injected with the `Address` bean using a setter method.
 
 ### ✅ Constructor-based Injection
-- `Student` class also provides a constructor for injecting the `Address` object.
-- Spring container uses the constructor to instantiate the bean.
+- The `Student` bean receives its dependencies through the constructor.
 
 ---
 
@@ -49,60 +51,69 @@ This project includes simple examples using a `Student` class that depends on an
    cd spring-di-example
 ````
 
-2. Open the project in your preferred IDE (e.g., Eclipse, IntelliJ).
+2. Open the project in your IDE (like IntelliJ or Eclipse).
 
-3. Add the Spring library to the classpath.
+3. Ensure Spring Core libraries are in your classpath.
 
-4. Run the `Test.java` file.
+4. Run `Test.java` from the `client` package.
 
 ---
 
 ## 📄 Sample Bean Configuration (applicationContext.xml)
 
 ```xml
-<bean id="address" class="com.example.Address">
-    <property name="city" value="Pune"/>
-    <property name="state" value="Maharashtra"/>
-</bean>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!-- Setter Injection -->
-<bean id="studentSetter" class="com.example.Student">
-    <property name="name" value="Rutika"/>
-    <property name="address" ref="address"/>
-</bean>
+    <!-- Address Bean -->
+    <bean id="address" class="model.Address">
+        <property name="city" value="Pune"/>
+        <property name="state" value="Maharashtra"/>
+    </bean>
 
-<!-- Constructor Injection -->
-<bean id="studentConstructor" class="com.example.Student">
-    <constructor-arg value="Rutika"/>
-    <constructor-arg ref="address"/>
-</bean>
+    <!-- Setter Injection -->
+    <bean id="studentSetter" class="model.Student">
+        <property name="name" value="Rutika"/>
+        <property name="address" ref="address"/>
+    </bean>
+
+    <!-- Constructor Injection -->
+    <bean id="studentConstructor" class="model.Student">
+        <constructor-arg value="Rutika"/>
+        <constructor-arg ref="address"/>
+    </bean>
+
+</beans>
 ```
 
 ---
 
 ## 🎯 Output
 
-Upon running the `Test` class, you will see the student name and their corresponding address displayed in the console, proving that the dependency has been successfully injected.
+When running the `Test` class, Spring will inject the `Address` object into `Student`, and print the student name and address, proving successful DI.
 
 ---
 
 ## 📚 Topics Covered
 
 * Spring Core
-* Bean Configuration
-* Object Dependency Injection
-* XML-based Configuration
+* Bean Configuration via XML
+* Object-based DI
+* Setter vs Constructor Injection
+* Java Classes and Beans
 
 ---
 
 ## 👩‍💻 Author
 
 **Rutika Chaugale**
-Training & Placement Solutions
-
 
 ---
 
 ## 🏷️ Tags
 
-`#SpringCore` `#DependencyInjection` `#SetterInjection` `#ConstructorInjection` `#Java` `#SpringFramework`
+`#SpringCore` `#DependencyInjection` `#SetterInjection` `#ConstructorInjection` `#Java` `#SpringFramework` `#SkillsITAcademy`
+
+
