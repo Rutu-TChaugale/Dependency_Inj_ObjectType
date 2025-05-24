@@ -48,7 +48,7 @@ This project uses a `Student` class dependent on an `Address` class to show how 
    ```bash
    git clone https://github.com/yourusername/spring-di-example.git
    cd spring-di-example
-````
+
 
 2. Open the project in your IDE (like IntelliJ or Eclipse).
 
@@ -85,7 +85,7 @@ This project uses a `Student` class dependent on an `Address` class to show how 
     </bean>
 
 </beans>
-```
+---
 
 
 
