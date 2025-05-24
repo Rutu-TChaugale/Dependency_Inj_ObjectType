@@ -86,18 +86,19 @@ This project uses a `Student` class dependent on an `Address` class to show how 
 
 </beans>
 
-##🎯 Output
+## 🎯 Output
 
-When running the `Test` class, Spring will inject the `Address` object into `Student`, and print the student name and address, proving successful DI.
+When running the `Test` class, Spring will inject the `Address` object into the `Student`, and print the student name and address, confirming successful Dependency Injection.
 
+---
 
 ## 📚 Topics Covered
 
-* Spring Core
-* Bean Configuration via XML
-* Object-based DI
-* Setter vs Constructor Injection
-* Java Classes and Beans
+- Spring Core  
+- Bean Configuration via XML  
+- Object-based Dependency Injection  
+- Setter vs Constructor Injection  
+- Java Classes and Beans  
 
 ---
 
@@ -109,7 +110,14 @@ When running the `Test` class, Spring will inject the `Address` object into `Stu
 
 ## 🏷️ Tags
 
-`#SpringCore` `#DependencyInjection` `#SetterInjection` `#ConstructorInjection` `#Java` `#SpringFramework` `#SkillsITAcademy`
+#SpringCore  
+#DependencyInjection  
+#SetterInjection  
+#ConstructorInjection  
+#Java  
+#SpringFramework  
+#SkillsITAcademy
+
 
 
 
