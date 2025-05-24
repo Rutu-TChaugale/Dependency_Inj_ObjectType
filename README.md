@@ -31,7 +31,6 @@ This project uses a `Student` class dependent on an `Address` class to show how 
 
 ````
 
----
 
 ## 📌 Features
 
@@ -88,13 +87,12 @@ This project uses a `Student` class dependent on an `Address` class to show how 
 </beans>
 ```
 
----
+
 
 ## 🎯 Output
 
 When running the `Test` class, Spring will inject the `Address` object into `Student`, and print the student name and address, proving successful DI.
 
----
 
 ## 📚 Topics Covered
 
